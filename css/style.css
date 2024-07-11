@@ -1,0 +1,341 @@
+/* root */
+:root {
+    /* font-size */
+    --size-xsm: 14px;
+    --size-sm: 16px;
+    --size-middle: 20px;
+    --size-large: 26px;
+    --size-big: 32px;
+    --size-xbig: 52px;
+    --size-2xbig: 120px;
+    --size-3xbig: 150px;
+    --size-4xbig: 200px;
+
+    /* color */
+    --color-black: #3f454d;
+    --color-white: #ffffff;
+    --color-yellow: #fbbe28;
+
+    /* weight */
+    --weight-l: 300;
+    --weight-r: 500;
+    --weight-b: 700;
+    --weight-bk: 900;
+}
+
+/*visual_start*/
+.visual video {
+    display: block;
+    width: calc(100vw - (100vw - 100%));
+    height: 100vh;
+    object-fit: cover;
+}
+
+/*men_start*/
+.sec {
+    max-width: 1840px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+}
+
+.sec img {
+    width: 100%;
+}
+
+.sec>a {
+    position: relative;
+}
+
+.sec .txt_btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    font-family: "Inter Tight", sans-serif;
+    font-weight: var(--weight-bk);
+    font-size: var(--size-4xbig);
+    color: #fff;
+    line-height: 180px;
+    white-space: nowrap;
+    /*반응형시 line-height 조정으로 크기 조절*/
+}
+
+.sec .txt_btn_hamburger {
+    position: relative;
+    left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.sec .txt_btn_hamburger span {
+    width: 110px;
+    height: 10px;
+    background-color: #fff;
+}
+
+.sec a img {
+    filter: grayscale(1.0);
+    transition: 1s;
+}
+
+.sec a:hover img {
+    filter: grayscale(0);
+}
+
+/*season_start*/
+.season_sec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.season_sec .txt_box h3 {
+    font-family: 'Druk Wide Trial', sans-serif;
+    font-weight: var(--weight-b);
+    font-size: var(--size-big);
+    margin-right: 15px;
+
+}
+
+.season_sec .txt_box p {
+    margin-top: 40px;
+    font-family: "Inter Tight", sans-serif;
+    font-weight: var(--weight-r);
+    font-size: var(--size-large);
+}
+
+.season_sec .thumbnail {
+    position: relative;
+}
+
+.season_sec .thumbnail:hover::after {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    height: 4%;
+    content: "Show more";
+    border-bottom: 1px solid black;
+    color: black;
+    font-family: "Inter Tight", sans-serif;
+    font-weight: var(--weight-b);
+    font-size: var(--size-big);
+}
+
+/*kids_start*/
+
+.kids_sec {
+    position: relative;
+}
+
+.kids_sec a {
+    display: flex;
+    position: static;
+}
+
+.kids_sec video {
+    display: block;
+    width: calc(100vw - (100vw - 100%));
+    min-height: 750px;
+    object-fit: cover;
+}
+
+/*shoes_start*/
+.shoes-bags_sec {
+    display: flex;
+    align-items: start;
+    gap: 40px;
+}
+
+.shoes-bags_sec .imgs_bags ul {
+    display: flex;
+}
+
+.shoes-bags_sec .txt_btn {
+    top: 50px;
+    transform: translate(-50%);
+    font-size: var(--size-3xbig);
+    line-height: 130px;
+}
+
+/*bags_start*/
+.shoes-bags_sec .imgs_shoes ul {
+    display: flex;
+}
+
+/*home_start*/
+.home_sec .txt_btn {
+    font-size: var(--size-2xbig);
+    line-height: 105px;
+    letter-spacing: 20px;
+}
+
+
+.home_sec ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/*highlight_start*/
+.highlight_sec .tit_box {
+    text-align: center;
+    font-family: 'Druk Wide Trial', sans-serif;
+    font-weight: var(--weight-bk);
+    font-size: var(--size-2xbig);
+}
+
+.highlight_sec>a {
+    margin-top: 40px;
+}
+
+.highlight_sec .txt_box {
+    text-align: center;
+    font-family: 'Druk Wide Trial', sans-serif;
+    font-weight: var(--weight-bk);
+    font-size: var(--size-big);
+    margin-top: 50px;
+}
+
+.highlight_sec .txt_box h3 {
+    border-bottom: 5px solid black;
+    margin-bottom: 20px;
+}
+
+.highlight_sec .txt_box h3:hover {
+    color: #A51329;
+    border-bottom: 5px solid #A51329;
+}
+
+
+.highlight_sec .txt_box p {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: var(--weight-l);
+    font-size: var(--size-middle);
+    margin-bottom: 10px;
+}
+
+/* runway_start*/
+.runway_sec {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 130px
+}
+
+.runway_sec>.runway_swiper {
+    flex: 2.6;
+}
+
+.runway_sec>.tit_box {
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    font-family: 'Druk Wide Trial', sans-serif;
+    font-weight: var(--weight-bk);
+    font-size: var(--size-xbig);
+    text-align: center;
+}
+
+.runway_swiper_nav {
+    position: relative;
+    top: 40px;
+    width: 80%;
+}
+
+.runway_swiper_nav .swiper-button-next::after,
+.runway_swiper_nav .swiper-button-prev::after {
+    color: #000;
+    font-size: var(--size-big);
+    font-weight: var(--weight-l);
+    top: 10%;
+}
+
+.runway_swiper_nav .swiper-pagination {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(10px);
+}
+
+.runway_swiper_nav .swiper-pagination-bullet {
+    background-color: #000;
+    margin: 0 !important;
+}
+
+/* service_start*/
+.service_sec {
+    font-family: "Inter Tight", sans-serif;
+    font-weight: var(--weight-b);
+    font-size: var(--size-xbig);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.service_sec .txt_box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.service_sec .txt_box h5 {
+    font-weight: var(--weight-b);
+    font-size: var(--size-big);
+}
+
+.service_sec .txt_box p {
+    font-weight: var(--weight-r);
+    font-size: var(--size-middle);
+}
+
+.service_sec>.imgs ul li {
+    position: relative;
+}
+
+.service_sec>.imgs ul li .txt_box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    color: #fff;
+}
+
+.service_sec>.imgs ul li:hover .txt_box {
+    opacity: 1;
+    visibility: visible;
+}
+
+.service_sec .imgs {
+    margin-top: 60px;
+}
+
+.service_sec .imgs ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.service_sec .imgs ul a img {
+    filter: grayscale(0);
+}
+
+.service_sec .imgs ul a:hover img {
+    filter: brightness(0.35);
+}
