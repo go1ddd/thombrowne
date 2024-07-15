@@ -25,74 +25,128 @@ $(document).ready(function () {
     $(".side_menu_box .x_btn").click(function () {
         $(".side_menu_box").removeClass("side_menu_active");
     });
-    gsap.from(".men_sec", {
-        scrollTrigger: {
-            trigger: ".men_sec", // 요소가 뷰포트에 드러나는 순간부터 애니메이션이 작동
-            start: "-500px top", // 애니메이션 시작시점
-            end: "-100px bottom", // 애니메이션 종료시점
-            scrub: 10,
-            markers: false,// 트리거 마커의 표시(boolean)
-        },
-        x: 500
-    });
-    gsap.from(".women_sec", {
-        scrollTrigger: {
-            trigger: ".women_sec",
-            start: "-500px 100px",
-            end: "-100px bottom",
-            scrub: 10,
-            markers: false,
-        },
-        x: -500
-    });
-    gsap.from(".season_sec > .txt_box h3", {
-        scrollTrigger: {
-            trigger: ".season_sec",
-            start: "-400px 100px",
-            end: "-100px bottom",
-            scrub: 3,
-            markers: false,
-        },
-        x: -800,
-    });
-    gsap.from(".season_sec > .txt_box > p", {
-        scrollTrigger: {
-            trigger: ".season_sec",
-            start: "-200px 100px",
-            end: "-100px bottom",
-            scrub: 5,
-            markers: false,
-        },
-        x: -500,
-    });
-    gsap.from(".kids_sec .txt_btn", {
-        scrollTrigger: {
-            trigger: ".kids_sec",
-            start: "-200px 100px",
-            end: "-100px bottom",
-            scrub: 2,
-            markers: false,
-        },
-        x: -1300,
-    });
-    gsap.from(".shoes-bags_sec .imgs_shoes", {
-        scrollTrigger: {
-            trigger: ".shoes-bags_sec",
-            start: "-200px 100px",
-            end: "-100px bottom",
-            scrub: 2,
-            markers: false,
-        },
-        x: 1000,
-    });
-    gsap.from(".shoes-bags_sec .imgs_bags", {
-        scrollTrigger: {
-            trigger: ".shoes-bags_sec",
-            start: "700px 100px",
-            end: "-100px bottom",
-            scrub: 2,
-            markers: false,
-        },
-        x: -1000,
-    });
+    /*애니메이션 시작*/
+    $(window).resize(function () {
+        if (window.innerWidth > 1240) {
+            gsap.from(".men_sec", {
+                scrollTrigger: {
+                    trigger: ".men_sec", // 요소가 뷰포트에 드러나는 순간부터 애니메이션이 작동
+                    start: "top 60%", // 애니메이션 시작시점
+                    end: "100px bottom", // 애니메이션 종료시점
+                    scrub: 2,
+                    markers: false,// 트리거 마커의 표시(boolean)
+                },
+                x: 2000,
+            });
+            gsap.from(".women_sec", {
+                scrollTrigger: {
+                    trigger: ".women_sec",
+                    start: "top 60%",
+                    end: "100px bottom",
+                    scrub: 2,
+                    markers: false,
+                },
+                x: -2000,
+            });
+            /*시즌 섹션 애니메이션*/
+            gsap.from(".season_sec > .txt_box", {
+                scrollTrigger: {
+                    trigger: ".season_sec",
+                    start: "top 60%",
+                    end: "100px bottom",
+                    scrub: 2,
+                    markers: false,
+                },
+                x: -1000,
+            });
+            /*슈즈 백 섹션 애니메이션*/
+            gsap.set('.shoes-bags_sec .imgs_shoes', { scale: 0, opacity: 0 });
+            gsap.to(".shoes-bags_sec .imgs_shoes", {
+                opacity: 1,
+                scale: 1,
+                scrollTrigger: {
+                    trigger: ".shoes",
+                    start: "-60% top",
+                    end: "100px bottom",
+                    scrub: 2,
+                    markers: false,
+                },
+            });
+            gsap.set('.shoes-bags_sec .imgs_bags', { scale: 0, opacity: 0 });
+            gsap.to(".shoes-bags_sec .imgs_bags", {
+                opacity: 1,
+                scale: 1,
+                scrollTrigger: {
+                    trigger: ".bags",
+                    start: "-60% top",
+                    end: "100px bottom",
+                    scrub: 2,
+                    markers: false,
+                },
+            });
+            /* 768 이상일때의 스크립트 */
+
+        } else {
+            gsap.from(".men_sec", {
+                scrollTrigger: {
+                    trigger: "body", // 요소가 뷰포트에 드러나는 순간부터 애니메이션이 작동
+                    start: "top top", // 애니메이션 시작시점
+                    end: "bottom bottom", // 애니메이션 종료시점
+                    scrub: 2,
+                    markers: false,// 트리거 마커의 표시(boolean)
+                },
+                x: 0,
+            });
+            gsap.from(".women_sec", {
+                scrollTrigger: {
+                    trigger: "body",
+                    start: "top 60%",
+                    end: "100px bottom",
+                    scrub: 2,
+                    markers: false,
+                },
+                x: 0,
+            });
+            /*시즌 섹션 애니메이션*/
+            gsap.from(".season_sec > .txt_box", {
+                scrollTrigger: {
+                    trigger: "body",
+                    start: "top 60%",
+                    end: "100px bottom",
+                    scrub: 2,
+                    markers: false,
+                },
+                x: 0,
+            });
+            /*슈즈 백 섹션 애니메이션*/
+            gsap.set('.shoes-bags_sec .imgs_shoes', { scale: 1, opacity: 1 });
+            gsap.to(".shoes-bags_sec .imgs_shoes", {
+                opacity: 1,
+                scale: 1,
+                scrollTrigger: {
+                    trigger: "body",
+                    start: "-60% top",
+                    end: "100px bottom",
+                    scrub: 0,
+                    markers: false,
+                },
+            });
+            gsap.set('.shoes-bags_sec .imgs_bags', { scale: 1, opacity: 1, });
+            gsap.to(".shoes-bags_sec .imgs_bags", {
+                opacity: 1,
+                scale: 1,
+                scrollTrigger: {
+                    trigger: "body",
+                    start: "-60% top",
+                    end: "100px bottom",
+                    scrub: 0,
+                    markers: false,
+                },
+            });
+            /* 768 이하일때의 스크립트 */
+
+        }
+
+    }).resize();
+
 });
